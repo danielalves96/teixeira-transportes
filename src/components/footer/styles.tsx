@@ -93,6 +93,14 @@ export const List = styled.ul`
   line-height: 17px;
   color: #ffffff;
   line-height: 32px;
+
+  li {
+    cursor: pointer;
+
+    &:hover {
+      color: #26aee5;
+    }
+  }
 `;
 
 export const Img = styled.img`

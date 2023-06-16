@@ -1,7 +1,9 @@
 import React from 'react';
 import * as S from './styles';
+import { Link } from 'react-scroll';
 
-const Footer: React.FC = () => {
+const Footer: React.FC<any> = (data: any) => {
+  const { appData } = data;
   return (
     <S.FooterWrapper>
       <S.SectionsWrapper>
@@ -10,7 +12,7 @@ const Footer: React.FC = () => {
           <S.Title>Todos os destinos. </S.Title>
           <S.Title>Um só caminho.</S.Title>
           <S.Description>
-            Procurando serviços de ligística? Conte com a Família Teixeita
+            Procurando serviços de logística? Conte com a Família Teixeita
             Transportes para te ajudar com o que necessita! Vamos onde você
             precisar estar.
           </S.Description>
@@ -18,12 +20,31 @@ const Footer: React.FC = () => {
         <S.SectionTwo>
           <S.OurSite>Nosso site</S.OurSite>
           <S.List>
-            <li>Início</li>
-            <li>Serviços</li>
-            <li>Conheça a empresa</li>
-            <li>Nossos números</li>
-            <li>Clientes</li>
-            <li>Solicite um orçamento</li>
+            <li>
+              <Link to="home" smooth={true} duration={500}>
+                Início
+              </Link>
+            </li>
+            <li>
+              <Link to="services" smooth={true} duration={500}>
+                Serviços
+              </Link>
+            </li>
+            <li>
+              <Link to="numbers" smooth={true} duration={500}>
+                Nossos números
+              </Link>
+            </li>
+            <li>
+              <Link to="clients" smooth={true} duration={500}>
+                Clientes
+              </Link>
+            </li>
+            <li>
+              <Link to="budget" smooth={true} duration={500}>
+                Solicite um orçamento
+              </Link>
+            </li>
           </S.List>
         </S.SectionTwo>
         <S.SectionThree>
@@ -31,29 +52,31 @@ const Footer: React.FC = () => {
           <S.Contact>
             <S.ContactItem>
               <S.ContactIcon src="assets/location.png" />
-              <S.ContactItemText>Curitiba/PR</S.ContactItemText>
+              <S.ContactItemText>{appData.address}</S.ContactItemText>
             </S.ContactItem>
             <S.ContactItem>
               <S.ContactIcon src="assets/mail.png" />
-              <S.ContactItemText>
-                contato@fteixeiratransportes.com.br
-              </S.ContactItemText>
+              <S.ContactItemText>{appData.mail}</S.ContactItemText>
             </S.ContactItem>
             <S.ContactItem>
               <S.ContactIcon src="assets/phone.png" />
               <S.ContactItemText>
-                <span>(41) 9 9999-9999 | (41) 3333-3333 </span>
+                <span>
+                  {appData.phone1} | {appData.phone2}{' '}
+                </span>
                 <br />
-                <span>Segunda a sexta: 08h às 18h</span>
+                <span>{appData.weekOpenedHours}</span>
                 <br />
-                <span>Sábados: 08 às 13h</span>
+                <span>{appData.weekendOpenedHours}</span>
               </S.ContactItemText>
             </S.ContactItem>
           </S.Contact>
         </S.SectionThree>
       </S.SectionsWrapper>
       <S.Credits>
-        <S.Rights>@ 2023 - Todos os direitos reservados</S.Rights>
+        <S.Rights>
+          © {new Date().getFullYear()} - Todos os direitos reservados
+        </S.Rights>
         <S.Author>
           Desenvolvido por{' '}
           <a href="https://daniel-luiz-alves.vercel.app/" target="_blank">

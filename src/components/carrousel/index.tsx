@@ -5,7 +5,7 @@ import * as S from './styles';
 
 const Carrousel = () => {
   return (
-    <div>
+    <div id="home">
       <S.CarrouselWrapper>
         <S.Slogan>Todos os destinos. Um só caminho.</S.Slogan>
         <S.Copy>

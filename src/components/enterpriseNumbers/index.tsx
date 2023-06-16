@@ -1,7 +1,8 @@
 import React from 'react';
 import * as S from './styles';
 
-const EntrepriseNumbers: React.FC = () => {
+const EntrepriseNumbers: React.FC<any> = (data: any) => {
+  const { appData } = data;
   return (
     <S.Wrapper>
       <S.Title>Um pouco sobre nossos números.</S.Title>
@@ -13,33 +14,34 @@ const EntrepriseNumbers: React.FC = () => {
       <S.Numbers>
         <S.Number>
           <S.ContentTitle>
-            10<span>+</span>
+            {appData.dataOneValue}
+            <span>+</span>
           </S.ContentTitle>
-          <S.ContentSubtitle>Veículos ativos</S.ContentSubtitle>
+          <S.ContentSubtitle> {appData.dataOneTitle}</S.ContentSubtitle>
           <S.ContentDescription>
-            Cavalos mecânicos e semirreboques.
+            {appData.dataOneDescription}
           </S.ContentDescription>
         </S.Number>
         <S.Divider></S.Divider>
         <S.Number>
           <S.ContentTitle>
-            70<span>+</span>
+            {appData.dataTwoValue}
+            <span>+</span>
           </S.ContentTitle>
-          <S.ContentSubtitle>KMs precorridos por mês</S.ContentSubtitle>
+          <S.ContentSubtitle>{appData.dataTwoTitle}</S.ContentSubtitle>
           <S.ContentDescription>
-            Atualmente, contamos com uma media de 700 viagens realizadas todos
-            os meses.
+            {appData.dataTwoDescription}
           </S.ContentDescription>
         </S.Number>
         <S.Divider></S.Divider>
         <S.Number>
           <S.ContentTitle>
-            50mil<span>+</span>
+            {appData.dataTreeValue}
+            <span>+</span>
           </S.ContentTitle>
-          <S.ContentSubtitle>Viagens/mês</S.ContentSubtitle>
+          <S.ContentSubtitle>{appData.dataTreeTitle}</S.ContentSubtitle>
           <S.ContentDescription>
-            Ao mês são percorridos pela empresa o equivalente a,
-            aproximadamente, 10 voltas ao redor da terra.
+            {appData.dataTreeDescription}
           </S.ContentDescription>
         </S.Number>
       </S.Numbers>
