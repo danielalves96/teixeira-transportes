@@ -22,6 +22,10 @@ export const List = styled.ul`
   gap: 45px;
   padding: 0;
   margin: 0;
+
+  @media (max-width: 1000px) {
+    display: none;
+  }
 `;
 
 export const Controls = styled.div`
