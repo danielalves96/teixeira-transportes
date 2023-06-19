@@ -1,17 +1,17 @@
-import Carrousel from '@/components/carrousel';
-import Contact from '@/components/contact';
-import EnterpriseClients from '@/components/enterpriseClients';
-import EntrepriseNumbers from '@/components/enterpriseNumbers';
-import EnterprisePicture from '@/components/enterprisePicture';
-import EnterpriseServices from '@/components/enterpriseServices';
-import Footer from '@/components/footer';
-import Header from '@/components/header';
-import ImageDivider from '@/components/imageDivider';
+import Carrousel from '@/components/web/carrousel';
+import Contact from '@/components/web/contact';
+import EnterpriseClients from '@/components/web/enterpriseClients';
+import EntrepriseNumbers from '@/components/web/enterpriseNumbers';
+import EnterprisePicture from '@/components/web/enterprisePicture';
+import EnterpriseServices from '@/components/web/enterpriseServices';
+import Footer from '@/components/web/footer';
+import Header from '@/components/web/header';
+import ImageDivider from '@/components/web/imageDivider';
 import Head from 'next/head';
 
 import { useQuery, gql } from '@apollo/client';
 import { useEffect } from 'react';
-import Loader from '@/components/loader';
+import Loader from '@/components/web/loader';
 
 interface AppData {
   id: string;
