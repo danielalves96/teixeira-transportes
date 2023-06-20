@@ -108,6 +108,7 @@ export default function Home() {
         <title>Família Teixeira Transportes</title>
         <meta name="description" content="Teixeira transportes" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta property="og:image" content="assets/truckTeixeira.png" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
