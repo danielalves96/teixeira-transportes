@@ -11,6 +11,8 @@ import {
 
 import { useQuery, gql, useMutation } from '@apollo/client';
 import { useEffect } from 'react';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 interface AppData {
   id: string;
@@ -154,11 +156,41 @@ export default function MyApp() {
       });
 
       try {
-        publishAppData();
+        await publishAppData();
+        toast.success('Mensagem enviada com sucesso!', {
+          position: 'top-right',
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: 'colored',
+        });
       } catch (error) {
+        toast.error('Ocorreu um erro, tente novamente.', {
+          position: 'top-right',
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: 'colored',
+        });
         console.log(error);
       }
     } catch (error) {
+      toast.error('Ocorreu um erro, tente novamente.', {
+        position: 'top-right',
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: 'colored',
+      });
       console.log(error);
     }
   };
@@ -357,6 +389,7 @@ export default function MyApp() {
           </Button>
         </form>
       </Container>
+      <ToastContainer />
     </>
   );
 }
