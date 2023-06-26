@@ -21,6 +21,7 @@ import MobileEntrepriseNumbers from '@/components/mobile/enterpriseNumbers';
 import MobileEnterprisePicture from '@/components/mobile/enterprisePicture';
 import MobileEnterpriseClients from '@/components/mobile/enterpriseClients';
 import MobileFooter from '@/components/mobile/footer';
+import WhatsAppButton from '@/components/web/wppButton';
 
 interface AppData {
   id: string;
@@ -169,6 +170,8 @@ export default function Home() {
             <Footer appData={appData} />
           </div>
         )}
+
+        <WhatsAppButton />
       </main>
     </>
   );
