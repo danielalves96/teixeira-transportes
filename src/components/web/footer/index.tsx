@@ -62,7 +62,7 @@ const Footer: React.FC<any> = (data: any) => {
               <S.ContactIcon src="assets/phone.png" />
               <S.ContactItemText>
                 <span>
-                  {appData.phone1} | {appData.phone2}{' '}
+                  {appData.phone1} {appData.phone2}{' '}
                 </span>
                 <br />
                 <span>{appData.weekOpenedHours}</span>
