@@ -3,7 +3,7 @@ import Tooltip from '@mui/material/Tooltip';
 
 const WhatsAppButton: React.FC = () => {
   const openWhatsAppChat = () => {
-    const phoneNumber = '5541992242449';
+    const phoneNumber = '5541992422449';
     const url = `https://api.whatsapp.com/send?phone=${phoneNumber}`;
     window.open(url, '_blank');
   };
