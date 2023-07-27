@@ -3,6 +3,7 @@ import * as S from './styles';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import emailjs from '@emailjs/browser';
+import InputMask from 'react-input-mask';
 
 const Contact = () => {
   const form = useRef();
@@ -70,7 +71,7 @@ const Contact = () => {
             required
           />
           <input
-            type="text"
+            type="email"
             placeholder="Qual o seu email?"
             name="mail"
             required
@@ -79,6 +80,14 @@ const Contact = () => {
             type="text"
             placeholder="Qual o seu telefone?"
             name="phone"
+            required
+          />
+          <InputMask
+            mask="(99) 99999-9999"
+            maskChar=" "
+            id="telefone"
+            name="telefone"
+            placeholder="Qual o seu telefone?"
             required
           />
           <textarea
